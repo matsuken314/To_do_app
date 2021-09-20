@@ -7,7 +7,19 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+import 'bootstrap';
+import '../stylesheets/application';
+import '@fortawesome/fontawesome-free/js/all';
+
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+// 作成したファイルをwebpackerに読み込ませます。
+import "../stylesheets/application"
+import "../js/hoge.js"
+
+// app/javascript/images/フォルダー内の001.jpeg画像を
+// webpackerに読み込ませます。
+const images = require.context('../images', true)
