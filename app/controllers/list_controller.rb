@@ -1,5 +1,5 @@
 class ListController < ApplicationController
- before_action :set_list, only: %i(edit update destroy)
+  before_action :set_list, only: [:edit, :update, :destroy]
   def new
     @list = List.new
   end
@@ -13,10 +13,9 @@ class ListController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
-   def update
+  def update
     if @list.update(list_params)
       redirect_to :root
     else
@@ -28,12 +27,14 @@ class ListController < ApplicationController
     @list.destroy
     redirect_to root_path
   end
-  private
-    def list_params
-      params.require(:list).permit(:title).merge(user: current_user)
-    end
 
-    def set_list
-      @list = List.find_by(id: params[:id])
-    end
+  private
+
+  def list_params
+    params.require(:list).permit(:title).merge(user: current_user)
+  end
+
+  def set_list
+    @list = List.find_by(id: params[:id])
+  end
 end
