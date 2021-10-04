@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   #   get '/users/sign_out' => 'devise/sessions#destroy'
   # end
   root 'top#index'
-  resources :list, only: %i(new create edit update destroy) do
-    resources :card, only: %i(new create)
+  resources :list, only: [:new, :create, :edit, :update, :destroy] do
+    resources :card, only: [:new, :create, :show]
   end
 end
