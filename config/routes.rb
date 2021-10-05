@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   # end
   root 'top#index'
   resources :list, only: [:new, :create, :edit, :update, :destroy] do
-    resources :card, only: %i(new create show edit update)
+    resources :card, except: %i(index)
   end
 end
