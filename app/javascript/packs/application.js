@@ -9,7 +9,7 @@ import "channels"
 import 'bootstrap';
 import '../stylesheets/application';
 import '@fortawesome/fontawesome-free/js/all';
-
+import '../js/test'
 
 Rails.start()
 Turbolinks.start()
