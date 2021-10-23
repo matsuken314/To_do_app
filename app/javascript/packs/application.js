@@ -9,7 +9,7 @@ import "channels"
 import 'bootstrap';
 import '../stylesheets/application';
 import '@fortawesome/fontawesome-free/js/all';
-
+import '../js/test'
 
 Rails.start()
 Turbolinks.start()
@@ -21,4 +21,4 @@ import "../js/hoge.js"
 
 // app/javascript/images/フォルダー内の001.jpeg画像を
 // webpackerに読み込ませます。
-const images = require.context('../images', true)
+//const images = require.context('../images', true)
